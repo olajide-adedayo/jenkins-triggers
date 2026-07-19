@@ -105,6 +105,7 @@ The Jenkins automation environment was deployed on Amazon Web Services (AWS) usi
 
 The Jenkins server was configured to securely communicate with GitHub using SSH keys, enabling automated pipeline execution based on multiple build trigger mechanisms.
 
+
 ---
 
 ## 📂 Repository Structure
@@ -112,6 +113,8 @@ The Jenkins server was configured to securely communicate with GitHub using SSH 
 text
 jenkins-triggers/
 ├── Jenkinsfile
+├── poll-scm-test.txt
+├── testfile.txt
 └── README.md
 
 
@@ -119,5 +122,7 @@ jenkins-triggers/
 
 | File | Description |
 |------|-------------|
-| Jenkinsfile | Declarative Pipeline as Code used by Jenkins to execute the build process. |
-| README.md | Project documentation, implementation details, screenshots, troubleshooting, and lessons learned. |
+| Jenkinsfile | Declarative Jenkins Pipeline used to execute the build process. |
+| testfile.txt | Test file created to validate automatic pipeline execution using GitHub Webhooks. |
+| poll-scm-test.txt | Test file created to verify Jenkins Poll SCM build trigger functionality. |
+| README.md | Comprehensive project documentation, implementation guide, screenshots, troubleshooting, and lessons learned. |
