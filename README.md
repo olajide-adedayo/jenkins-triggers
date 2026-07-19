@@ -126,3 +126,61 @@ jenkins-triggers/
 | testfile.txt | Test file created to validate automatic pipeline execution using GitHub Webhooks. |
 | poll-scm-test.txt | Test file created to verify Jenkins Poll SCM build trigger functionality. |
 | README.md | Comprehensive project documentation, implementation guide, screenshots, troubleshooting, and lessons learned. |
+
+---
+
+## ⚙️ Jenkins Pipeline Workflow
+
+The project uses a declarative Jenkins Pipeline stored in the GitHub repository. Jenkins retrieves the Jenkinsfile from the configured repository and executes the pipeline whenever a configured build trigger is activated.
+
+The pipeline performs the following tasks:
+
+1. Allocates an available Jenkins agent.
+2. Executes the *Build* stage.
+3. Runs a shell command to simulate the build process.
+4. Displays a successful build message in the Jenkins console output.
+
+### Jenkinsfile
+
+groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Build completed."'
+            }
+        }
+    }
+}
+
+
+---
+
+## 🚀 Build Trigger Implementation
+
+The project demonstrates four different methods of triggering Jenkins pipeline execution.
+
+### 1. GitHub Webhook
+
+GitHub Webhooks were configured to automatically notify Jenkins whenever code was pushed to the repository. This enabled event-driven pipeline execution without manual intervention.
+
+### 2. Poll SCM
+
+Jenkins was configured to periodically check the GitHub repository for source code changes using a cron schedule. When a new commit was detected, Jenkins automatically executed the pipeline.
+
+### 3. Build Periodically
+
+A scheduled build trigger was configured using Jenkins cron syntax to demonstrate time-based pipeline execution.
+
+### 4. Remote Build Trigger
+
+The Jenkins Remote API was configured to allow secure remote pipeline execution using:
+
+- Authentication Token
+- Jenkins API Token
+- Jenkins CSRF Crumb
+- curl
+
+The remote build was successfully triggered from Git Bash, demonstrating secure external job execution through the Jenkins Remote API.
