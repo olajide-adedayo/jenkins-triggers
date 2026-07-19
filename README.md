@@ -205,3 +205,28 @@ The following screenshots capture the key implementation stages and successful v
 | ![Remote Build](screenshots/18-remote-triggered-build.png) | *Remote Build Success* – Successful pipeline execution triggered through the Jenkins Remote API. |
 
 ---
+
+## 🔧 Troubleshooting & Best Practices
+
+During the implementation of this project, several configuration and integration challenges were encountered and successfully resolved.
+
+| Issue | Cause | Resolution / Best Practice |
+|------|-------|-----------------------------|
+| GitHub webhook delivery failed | Incorrect webhook URL or inaccessible Jenkins server | Verify the webhook URL ends with /github-webhook/ and ensure the Jenkins server is publicly reachable on port *8080*. |
+| Webhook delivery returned an error | Jenkins security group blocked incoming requests | Configure the Jenkins EC2 security group to allow inbound traffic on port *8080* from GitHub. |
+| Pipeline was not triggered after a push | GitHub hook trigger was not enabled in Jenkins | Enable *GitHub hook trigger for GITScm polling* in the Jenkins job configuration. |
+| Poll SCM did not trigger a build | Invalid or inappropriate cron schedule | Validate the cron expression and monitor the *Git Polling Log* to confirm repository polling. |
+| Remote build request returned *403 Forbidden* | Missing or invalid Jenkins CSRF Crumb | Generate a valid CSRF Crumb using the Jenkins API and include it in the request header. |
+| Remote build authentication failed | Invalid or expired API Token | Generate a valid Jenkins API Token and use it together with the Jenkins username when making authenticated requests. |
+| Remote trigger failed | Incorrect authentication token configured for the job | Ensure the authentication token configured in *Trigger builds remotely* matches the token supplied in the build URL. |
+| Repository changes were not detected | Local changes were not committed and pushed to GitHub | Always verify commits and pushes before expecting Jenkins to trigger a pipeline. |
+
+### Best Practices
+
+- Store the Jenkins pipeline definition in source control using a Jenkinsfile.
+- Use GitHub Webhooks for near real-time pipeline execution instead of frequent repository polling whenever possible.
+- Protect Jenkins API Tokens and never expose them in public repositories or documentation.
+- Use CSRF Crumbs when interacting with the Jenkins Remote API.
+- Verify webhook deliveries from the GitHub *Recent Deliveries* page during troubleshooting.
+- Keep Jenkins plugins updated to maintain compatibility and security.
+- Follow meaningful Git commit message conventions to maintain a clean project history.
