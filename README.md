@@ -52,3 +52,39 @@ The solution integrates GitHub and Jenkins using a declarative Pipeline as Code 
 This implementation demonstrates multiple approaches to build automation, allowing Jenkins to support real-time event-driven builds, scheduled executions, repository polling, and secure remote job triggering.
 
 ---
+
+## 🛠️ Technology Stack
+
+The following technologies and tools were used to implement and validate this project:
+
+| Category | Technology |
+|----------|------------|
+| Continuous Integration | Jenkins |
+| Source Code Management | Git |
+| Version Control Platform | GitHub |
+| Pipeline | Declarative Jenkins Pipeline |
+| Authentication | SSH Authentication |
+| Build Triggers | GitHub Webhooks, Poll SCM, Build Periodically, Remote Trigger |
+| Remote API | Jenkins Remote API |
+| Security | API Token, Jenkins CSRF Crumb |
+| Command Line | Git Bash |
+| HTTP Client | cURL |
+| Operating System | Amazon Linux 2023 (Jenkins Server) |
+| Cloud Platform | Amazon Web Services (AWS EC2) |
+
+---
+
+## 📋 Prerequisites
+
+Before implementing this project, ensure the following requirements are available:
+
+- An active AWS account.
+- A running Jenkins server hosted on an Amazon EC2 instance.
+- Git installed and configured.
+- GitHub repository containing the Jenkinsfile.
+- SSH authentication configured between Jenkins and GitHub.
+- GitHub Webhook access to the Jenkins server over port *8080*.
+- Git Bash installed on the local workstation.
+- cURL available for interacting with the Jenkins Remote API.
+- Jenkins configured with the required plugins for Pipeline and Git integration.
+- Internet connectivity for communication between GitHub and Jenkins.
