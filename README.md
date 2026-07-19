@@ -26,6 +26,24 @@ The Jenkins Pipeline is integrated with a GitHub repository using SSH authentica
 
 ---
 
+# 📑 Table of Contents
+
+- [🎯 Business Objective](#-business-objective)
+- [🏗️ Solution Architecture](#️-solution-architecture)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📋 Prerequisites](#-prerequisites)
+- [☁️ AWS Infrastructure](#️-aws-infrastructure)
+- [📂 Repository Structure](#-repository-structure)
+- [⚙️ Jenkins Pipeline Workflow](#️-jenkins-pipeline-workflow)
+- [🚀 Build Trigger Implementation](#-build-trigger-implementation)
+- [📸 Project Screenshots](#-project-screenshots)
+- [🔧 Troubleshooting & Best Practices](#-troubleshooting--best-practices)
+- [📚 Lessons Learned](#-lessons-learned)
+- [💼 Skills Demonstrated](#-skills-demonstrated)
+- [🎯 Conclusion](#-conclusion)
+
+---
+
 ## 🎯 Business Objective
 
 Modern software development teams require Continuous Integration (CI) pipelines that can automatically respond to code changes, scheduled tasks, and external automation events. Manually triggering pipeline builds is inefficient, error-prone, and does not scale for production environments.
