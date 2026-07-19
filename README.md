@@ -184,3 +184,24 @@ The Jenkins Remote API was configured to allow secure remote pipeline execution 
 - curl
 
 The remote build was successfully triggered from Git Bash, demonstrating secure external job execution through the Jenkins Remote API.
+
+---
+
+## 📸 Project Screenshots
+
+The following screenshots capture the key implementation stages and successful validation of each Jenkins build trigger demonstrated in this project.
+
+| Screenshot | Description |
+|------------|-------------|
+| ![GitHub Repository](screenshots/02-github-jenkins-triggers-repository.png) | *GitHub Repository Configuration* – Jenkins Pipeline repository containing the Jenkinsfile and project files. |
+| ![GitHub Webhook](screenshots/03-github-add-webhook-configuration.png) | *GitHub Webhook Configuration* – Configuring a webhook to notify Jenkins whenever code is pushed to the repository. |
+| ![Webhook Delivery](screenshots/04-github-webhook-delivery-status.png) | *Webhook Delivery Status* – Successful webhook delivery from GitHub to Jenkins. |
+| ![Jenkins Hook Trigger](screenshots/05-github-hook-trigger-enabled.png) | *Jenkins Webhook Trigger* – Enabling the GitHub hook trigger for GITScm polling in Jenkins. |
+| ![Webhook Build](screenshots/09-webhook-automatic-build-trigger.png) | *Webhook Build Success* – Pipeline automatically triggered after a GitHub push event. |
+| ![Poll SCM](screenshots/11-poll-scm-build-trigger-configuration.png) | *Poll SCM Configuration* – Configuring Jenkins to periodically check the GitHub repository for changes. |
+| ![Build Periodically](screenshots/14-build-periodically-configuration.png) | *Build Periodically Configuration* – Scheduling automatic pipeline execution using Jenkins cron syntax. |
+| ![Remote Trigger](screenshots/15-remote-build-trigger-configuration.png) | *Remote Build Trigger Configuration* – Configuring Jenkins to accept authenticated remote build requests. |
+| ![Jenkins Crumb](screenshots/17-jenkins-crumb-generated-with-curl.png) | *Jenkins CSRF Crumb Generation* – Retrieving a CSRF crumb securely using the Jenkins API and curl. |
+| ![Remote Build](screenshots/18-remote-triggered-build.png) | *Remote Build Success* – Successful pipeline execution triggered through the Jenkins Remote API. |
+
+---
