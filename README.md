@@ -23,3 +23,32 @@ The implementation covers four widely used Jenkins build triggers:
 - *Remote Build Trigger* – Trigger pipeline execution remotely using the Jenkins Remote API, API Tokens, CSRF Crumbs, and curl.
 
 The Jenkins Pipeline is integrated with a GitHub repository using SSH authentication. Each trigger mechanism was configured, tested, and validated through successful pipeline executions, demonstrating practical Continuous Integration (CI) automation techniques used in modern DevOps environments.
+
+---
+
+## 🎯 Business Objective
+
+Modern software development teams require Continuous Integration (CI) pipelines that can automatically respond to code changes, scheduled tasks, and external automation events. Manually triggering pipeline builds is inefficient, error-prone, and does not scale for production environments.
+
+The objective of this project was to implement and demonstrate multiple Jenkins build trigger mechanisms that automate pipeline execution based on different operational requirements. This improves development efficiency, reduces manual intervention, and enables faster feedback during the software delivery lifecycle.
+
+By implementing multiple trigger methods, the project demonstrates how Jenkins can support event-driven, scheduled, repository polling, and remote API-based automation commonly used in enterprise DevOps environments.
+
+---
+
+## 🏗️ Solution Architecture
+
+The solution integrates GitHub and Jenkins using a declarative Pipeline as Code stored in a GitHub repository and accessed through SSH authentication. Jenkins was configured to execute the pipeline using four different build trigger mechanisms, each serving a specific automation purpose.
+
+### Architecture Workflow
+
+1. Developers push code changes to the GitHub repository.
+2. GitHub Webhooks immediately notify Jenkins to trigger pipeline execution.
+3. Poll SCM periodically checks the repository for changes using a cron schedule when webhooks are not used.
+4. Build Periodically executes the pipeline automatically at predefined times using Jenkins cron expressions.
+5. Remote Build Trigger enables external applications or scripts to trigger Jenkins jobs securely using the Jenkins Remote API, API Tokens, CSRF Crumbs, and curl.
+6. Jenkins executes the declarative pipeline and displays the build status and console output for each execution.
+
+This implementation demonstrates multiple approaches to build automation, allowing Jenkins to support real-time event-driven builds, scheduled executions, repository polling, and secure remote job triggering.
+
+---
