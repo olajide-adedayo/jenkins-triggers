@@ -88,3 +88,36 @@ Before implementing this project, ensure the following requirements are availabl
 - cURL available for interacting with the Jenkins Remote API.
 - Jenkins configured with the required plugins for Pipeline and Git integration.
 - Internet connectivity for communication between GitHub and Jenkins.
+
+---
+
+## ☁️ AWS Infrastructure
+
+The Jenkins automation environment was deployed on Amazon Web Services (AWS) using an Amazon EC2 instance. The server hosted the Jenkins application and integrated with GitHub over SSH authentication to execute Pipeline as Code workflows.
+
+### Infrastructure Components
+
+| AWS Service | Purpose |
+|------------|---------|
+| Amazon EC2 | Hosted the Jenkins server |
+| Security Group | Allowed inbound access for SSH (22) and Jenkins (8080) |
+| Amazon EBS | Persistent storage for the Jenkins server and build data |
+
+The Jenkins server was configured to securely communicate with GitHub using SSH keys, enabling automated pipeline execution based on multiple build trigger mechanisms.
+
+---
+
+## 📂 Repository Structure
+
+text
+jenkins-triggers/
+├── Jenkinsfile
+└── README.md
+
+
+### Repository Files
+
+| File | Description |
+|------|-------------|
+| Jenkinsfile | Declarative Pipeline as Code used by Jenkins to execute the build process. |
+| README.md | Project documentation, implementation details, screenshots, troubleshooting, and lessons learned. |
